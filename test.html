@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> 2 Maneras de Crear clases en Javascript</title>
+  </head>
+  <body>
+    <h1>2 Maneras de Crear clases en Javascript</h1>
+    <br>
+    <div id="print"></div>
+    <div id="print2"></div>
+    <script>
+      // 1era Forma
+      // Class
+      var Persona = function(){
+        //Propiedades
+        this.edad;
+        this.nombre;
+        //Metodo
+        this.hablar = function(edad,nombre){
+          var res = "Mi edad es "+edad+" y mi nombre es: "+nombre;
+          var print = document.getElementById("print");
+          return print.innerHTML = res;
+        }
+      }
+    //Instancia de la clase Persona
+    var Juan = new Persona();
+    Juan.hablar(18,"Juan");
+
+    // 2da Forma
+    // Class
+    var Persona = {
+      "edad":22,
+      "nombre":"Jorge",
+      hablar:function(){
+        var res = "Mi edad es "+Persona.edad+" y mi nombre es: "+Persona.nombre;
+        var print = document.getElementById("print2");
+        return print.innerHTML = res;
+      }
+    }
+    Persona.hablar();
+    </script>
+  </body>
+</html>
